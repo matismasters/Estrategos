@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Estrategos
 {
-    public class AutenticarViaEmail : IAutenticadorDeUsuario
+    public class AutenticarViaRecoveryCodes : IAutenticadorDeUsuario
     {
-        public bool EvaluarIdentidad(string param0, string param2, Usuario usuario)
+        public bool EvaluarIdentidad(string param1, string param2, Usuario usuario)
         {
-            if (usuario.Email == param0 && usuario.Password == param2)
+            if (usuario.RecoveryCodes == param1 || usuario.RecoveryCodes == param2)
             {
                 return true;
             } else
